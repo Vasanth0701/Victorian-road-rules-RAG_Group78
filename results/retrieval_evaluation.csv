@@ -1,0 +1,11 @@
+question_id,question,expected_source,bm25_rank1,bm25_top3,bm25_top5,bm25_correct_rank,bm25_hit1,bm25_hit3,bm25_hit5,dense_rank1,dense_top3,dense_top5,dense_correct_rank,dense_hit1,dense_hit3,dense_hit5
+Q01,Can a learner driver use a mobile phone while driving?,S02,S02,S02|S03|S03,S02|S03|S03|S01|S02,1,True,True,True,S02,S02|S03|S02,S02|S03|S02|S01|S03,1,True,True,True
+Q02,Can a full licence driver use a mounted phone for navigation?,S03,S03,S03|S02|S03,S03|S02|S03|S02|S01,1,True,True,True,S03,S03|S02|S03,S03|S02|S03|S02|S03,1,True,True,True
+Q03,What BAC limit applies to a learner driver?,S05,S05,S05|S05|S06,S05|S05|S06|S06|S01,1,True,True,True,S01,S01|S01|S05,S01|S01|S05|S05|S06,3,False,True,True
+Q04,What BAC limit applies to most fully licensed drivers?,S05,S05,S05|S03|S07,S05|S03|S07|S03|S04,1,True,True,True,S05,S05|S05|S01,S05|S05|S01|S01|S01,1,True,True,True
+Q05,What speed limit applies when there is no speed sign?,S04,S04,S04|S04|S04,S04|S04|S04|S04|S04,1,True,True,True,S04,S04|S04|S04,S04|S04|S04|S04|S04,1,True,True,True
+Q06,How do demerit point limits differ for probationary and full licence drivers?,S06,S06,S06|S06|S01,S06|S06|S01|S04|S07,1,True,True,True,S06,S06|S06|S04,S06|S06|S04|S06|S06,1,True,True,True
+Q07,How long can someone use an overseas licence after moving to Victoria?,S07,S07,S07|S07|S04,S07|S07|S04|S07|S07,1,True,True,True,S07,S07|S07|S07,S07|S07|S07|S07|S07,1,True,True,True
+Q08,What restrictions apply to P1 drivers?,S01,S02,S02|S01|S07,S02|S01|S07|S05|S06,2,False,True,True,S01,S01|S01|S02,S01|S01|S02|S02|S02,1,True,True,True
+Q09,What rules apply to supervising a learner driver?,S01,S02,S02|S01|S05,S02|S01|S05|S01|S05,2,False,True,True,S01,S01|S01|S02,S01|S01|S02|S02|S05,1,True,True,True
+Q10,Where can the official Victorian road rules be found?,S08,S08,S08|S04|S08,S08|S04|S08|S08|S07,1,True,True,True,S08,S08|S08|S07,S08|S08|S07|S04|S05,1,True,True,True

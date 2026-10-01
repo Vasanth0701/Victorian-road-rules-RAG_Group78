@@ -1,0 +1,132 @@
+Loading chunks...
+Loading ground truth...
+Loading BM25...
+Loading embedding model...
+Loading FAISS index...
+
+Chunks: 44
+Ground-truth questions: 10
+
+======================================================================
+Q01: Can a learner driver use a mobile phone while driving?
+Expected source: S02
+
+Top-1  | BM25: ['S02'] HIT
+       | Dense: ['S02'] HIT
+Top-3  | BM25: ['S02', 'S03', 'S03'] HIT
+       | Dense: ['S02', 'S03', 'S02'] HIT
+Top-5  | BM25: ['S02', 'S03', 'S03', 'S01', 'S02'] HIT
+       | Dense: ['S02', 'S03', 'S02', 'S01', 'S03'] HIT
+
+======================================================================
+Q02: Can a full licence driver use a mounted phone for navigation?
+Expected source: S03
+
+Top-1  | BM25: ['S03'] HIT
+       | Dense: ['S03'] HIT
+Top-3  | BM25: ['S03', 'S02', 'S03'] HIT
+       | Dense: ['S03', 'S02', 'S03'] HIT
+Top-5  | BM25: ['S03', 'S02', 'S03', 'S02', 'S01'] HIT
+       | Dense: ['S03', 'S02', 'S03', 'S02', 'S03'] HIT
+
+======================================================================
+Q03: What BAC limit applies to a learner driver?
+Expected source: S05
+
+Top-1  | BM25: ['S05'] HIT
+       | Dense: ['S01'] MISS
+Top-3  | BM25: ['S05', 'S05', 'S06'] HIT
+       | Dense: ['S01', 'S01', 'S05'] HIT
+Top-5  | BM25: ['S05', 'S05', 'S06', 'S06', 'S01'] HIT
+       | Dense: ['S01', 'S01', 'S05', 'S05', 'S06'] HIT
+
+======================================================================
+Q04: What BAC limit applies to most fully licensed drivers?
+Expected source: S05
+
+Top-1  | BM25: ['S05'] HIT
+       | Dense: ['S05'] HIT
+Top-3  | BM25: ['S05', 'S03', 'S07'] HIT
+       | Dense: ['S05', 'S05', 'S01'] HIT
+Top-5  | BM25: ['S05', 'S03', 'S07', 'S03', 'S04'] HIT
+       | Dense: ['S05', 'S05', 'S01', 'S01', 'S01'] HIT
+
+======================================================================
+Q05: What speed limit applies when there is no speed sign?
+Expected source: S04
+
+Top-1  | BM25: ['S04'] HIT
+       | Dense: ['S04'] HIT
+Top-3  | BM25: ['S04', 'S04', 'S04'] HIT
+       | Dense: ['S04', 'S04', 'S04'] HIT
+Top-5  | BM25: ['S04', 'S04', 'S04', 'S04', 'S04'] HIT
+       | Dense: ['S04', 'S04', 'S04', 'S04', 'S04'] HIT
+
+======================================================================
+Q06: How do demerit point limits differ for probationary and full licence drivers?
+Expected source: S06
+
+Top-1  | BM25: ['S06'] HIT
+       | Dense: ['S06'] HIT
+Top-3  | BM25: ['S06', 'S06', 'S01'] HIT
+       | Dense: ['S06', 'S06', 'S04'] HIT
+Top-5  | BM25: ['S06', 'S06', 'S01', 'S04', 'S07'] HIT
+       | Dense: ['S06', 'S06', 'S04', 'S06', 'S06'] HIT
+
+======================================================================
+Q07: How long can someone use an overseas licence after moving to Victoria?
+Expected source: S07
+
+Top-1  | BM25: ['S07'] HIT
+       | Dense: ['S07'] HIT
+Top-3  | BM25: ['S07', 'S07', 'S04'] HIT
+       | Dense: ['S07', 'S07', 'S07'] HIT
+Top-5  | BM25: ['S07', 'S07', 'S04', 'S07', 'S07'] HIT
+       | Dense: ['S07', 'S07', 'S07', 'S07', 'S07'] HIT
+
+======================================================================
+Q08: What restrictions apply to P1 drivers?
+Expected source: S01
+
+Top-1  | BM25: ['S02'] MISS
+       | Dense: ['S01'] HIT
+Top-3  | BM25: ['S02', 'S01', 'S07'] HIT
+       | Dense: ['S01', 'S01', 'S02'] HIT
+Top-5  | BM25: ['S02', 'S01', 'S07', 'S05', 'S06'] HIT
+       | Dense: ['S01', 'S01', 'S02', 'S02', 'S02'] HIT
+
+======================================================================
+Q09: What rules apply to supervising a learner driver?
+Expected source: S01
+
+Top-1  | BM25: ['S02'] MISS
+       | Dense: ['S01'] HIT
+Top-3  | BM25: ['S02', 'S01', 'S05'] HIT
+       | Dense: ['S01', 'S01', 'S02'] HIT
+Top-5  | BM25: ['S02', 'S01', 'S05', 'S01', 'S05'] HIT
+       | Dense: ['S01', 'S01', 'S02', 'S02', 'S05'] HIT
+
+======================================================================
+Q10: Where can the official Victorian road rules be found?
+Expected source: S08
+
+Top-1  | BM25: ['S08'] HIT
+       | Dense: ['S08'] HIT
+Top-3  | BM25: ['S08', 'S04', 'S08'] HIT
+       | Dense: ['S08', 'S08', 'S07'] HIT
+Top-5  | BM25: ['S08', 'S04', 'S08', 'S08', 'S07'] HIT
+       | Dense: ['S08', 'S08', 'S07', 'S04', 'S05'] HIT
+
+======================================================================
+FINAL RETRIEVAL SUMMARY
+======================================================================
+
+BM25
+Hit@1: 8/10 (80.0%)
+Hit@3: 10/10 (100.0%)
+Hit@5: 10/10 (100.0%)
+
+Dense FAISS
+Hit@1: 9/10 (90.0%)
+Hit@3: 10/10 (100.0%)
+Hit@5: 10/10 (100.0%)

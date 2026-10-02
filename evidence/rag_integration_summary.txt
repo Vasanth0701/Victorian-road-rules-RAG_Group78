@@ -1,0 +1,36 @@
+RAG – Local LLM Integration
+
+Contribution:
+Integrated the existing road-rule retrieval pipeline with a local Llama 3.2 model using Ollama.
+
+Implementation:
+- Used the existing search() function to retrieve the Top-3 relevant road-rule chunks.
+- Combined the retrieved source title, section, URL and text into a context.
+- Added the user's question and retrieved context to the LLM prompt.
+- Connected the application to the local Llama 3.2:3b model through the Ollama API.
+- Instructed the model to answer only from the retrieved context and avoid inventing information.
+- Displayed the generated answer together with the retrieved sources.
+
+Pipeline:
+User Question
+→ Existing Retrieval Search
+→ Top-3 Retrieved Chunks
+→ Context Construction
+→ Llama 3.2 via Ollama
+→ Grounded Answer
+→ Retrieved Sources
+
+Testing:
+The integration was tested using three Victorian road-rule questions:
+
+1. Learner driver BAC limit
+2. Requirements for supervising a learner driver
+3. Mobile phone/device rules for learner drivers
+
+All three tests successfully retrieved relevant road-rule information and generated an answer using the retrieved context.
+
+Evidence:
+- rag_test_1_bac.png
+- rag_test_2_supervising.png
+- rag_test_3_mobile.png
+- rag_integration_code.txt

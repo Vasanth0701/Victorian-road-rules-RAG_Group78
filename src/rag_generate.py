@@ -67,7 +67,30 @@ ANSWER:
 
     return result["response"]
 
+def ask_road_rules(question):
+    if not question or not question.strip():
+        return {
+            "answer": "Question cannot be empty.",
+            "sources": []
+        }
 
+    results = search(question.strip(), top_k=TOP_K)
+    context = build_context(results)
+    answer = generate_answer(question.strip(), context)
+
+    sources = []
+
+    for result in results:
+        sources.append({
+            "title": result["source_title"],
+            "section": result["section"],
+            "url": result["url"]
+        })
+
+    return {
+        "answer": answer,
+        "sources": sources
+    }
 def main():
     question = input("Enter a Victorian road rules question: ").strip()
 

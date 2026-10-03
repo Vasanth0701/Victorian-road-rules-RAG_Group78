@@ -1,0 +1,75 @@
+VICTORIAN ROAD RULES RAG ASSISTANT
+FINAL RAG EVALUATION SUMMARY
+
+1. Evaluation Setup
+
+The final RAG system was evaluated using 10 ground-truth Victorian road-rule questions (Q01-Q10) and 3 additional out-of-scope questions.
+
+The ground-truth evaluation assessed:
+- Answer correctness and relevance
+- Support from retrieved context
+- Retrieval of the expected source
+- Expected source ranking
+- Incorrect or unsupported information
+- Completeness of generated answers
+
+The out-of-scope evaluation assessed whether the system correctly refused to answer questions that were not supported by the Victorian road-rules knowledge base.
+
+2. Retrieval Evaluation
+
+Existing retrieval evaluation results for the 10 ground-truth questions were:
+
+BM25:
+- Hit@1: 8/10 (80.0%)
+- Hit@3: 10/10 (100.0%)
+- Hit@5: 10/10 (100.0%)
+
+Dense FAISS:
+- Hit@1: 9/10 (90.0%)
+- Hit@3: 10/10 (100.0%)
+- Hit@5: 10/10 (100.0%)
+
+Dense FAISS achieved a higher Hit@1 result than BM25 (90% compared with 80%). Both approaches achieved 100% Hit@3 and Hit@5.
+
+3. End-to-End RAG Evaluation
+
+All 10 ground-truth questions received answers that were judged correct and relevant to the question.
+
+- Correct/relevant answers: 10/10 (100%)
+- Answers supported by retrieved context: 10/10 (100%)
+- Expected source retrieved within Top-3: 10/10 (100%)
+- Expected source at Rank 1: 9/10 (90%)
+
+For Q03, the expected source was successfully retrieved but appeared at Rank 3 rather than Rank 1.
+
+Q06 produced the correct demerit-point limits, although the additional explanatory sentence contained a minor clarity issue.
+
+Q08 produced correct P1 restriction information but was incomplete compared with the ground truth. It omitted the 0.00 BAC requirement, the requirement to carry the licence, and the automatic-transmission condition.
+
+Q09 also produced correct information but was incomplete compared with the ground truth. It omitted the requirement for the supervisor to sit in the front passenger seat and to hold a current full licence valid for the relevant vehicle type.
+
+These results show that successful retrieval does not always guarantee a fully complete generated answer, particularly for broad questions requiring several rules to be combined.
+
+4. Out-of-Scope Evaluation
+
+Three out-of-scope questions were tested:
+- Learner driver rules in New South Wales
+- Car insurance cost in Victoria
+- Fastest driving route from Melbourne to Sydney
+
+The system correctly identified insufficient information for all three questions and did not invent unsupported answers.
+
+- Correctly unanswered: 3/3 (100%)
+- Unsupported/hallucinated out-of-scope answers: 0/3 (0%)
+
+5. Key Findings
+
+The evaluation shows strong retrieval performance at Top-3 and strong end-to-end answer correctness on the ground-truth test set.
+
+Dense FAISS performed better than BM25 at Hit@1, while both methods achieved complete source coverage by Top-3.
+
+The RAG system was also effective at handling the tested out-of-scope questions, correctly declining all three rather than generating unsupported information.
+
+The main observed limitation was answer completeness. Q08 and Q09 retrieved the correct source at Rank 1 but omitted some ground-truth details from the generated response. Q06 also demonstrated a minor clarity issue in additional generated explanation.
+
+Overall, the evaluation indicates that the system can retrieve relevant Victorian road-rule information, generate grounded answers, and appropriately decline the tested unsupported questions, while generation completeness remains an area for improvement.
